@@ -1,19 +1,17 @@
-package com.application.customer.entity;
+package com.application.plan.dto;
 
 
-import jakarta.persistence.*;
+import com.application.plan.entity.Plan;
 
-@Entity
-public class Plan {
+public class PlanDTO {
 
-	@Id
-	@Column(name = "plan_id", nullable = false)
+	
 	Integer planId;
-	@Column(name = "plan_name", nullable = false, length = 50)
+	
 	String planName;
-	@Column(name = "national_rate", nullable = false)
+
 	Integer nationalRate;
-	@Column(name = "local_rate", nullable = false)
+
 	Integer localRate;
 	public Integer getPlanId() {
 		return planId;
@@ -27,7 +25,7 @@ public class Plan {
 	public void setPlanName(String planName) {
 		this.planName = planName;
 	}
-	
+
 	public Integer getNationalRate() {
 		return nationalRate;
 	}
@@ -40,9 +38,24 @@ public class Plan {
 	public void setLocalRate(Integer localRate) {
 		this.localRate = localRate;
 	}
-	public Plan() {
+	public PlanDTO() {
 		super();
 	}
 
-	
+	// Converts Entity into DTO
+	public static PlanDTO valueOf(Plan plan) {
+		PlanDTO planDTO= new PlanDTO();
+		planDTO.setLocalRate(plan.getLocalRate());
+		planDTO.setNationalRate(plan.getNationalRate());
+		planDTO.setPlanId(plan.getPlanId());
+		planDTO.setPlanName(plan.getPlanName());
+		return planDTO;
+	}
+	@Override
+	public String toString() {
+		return "PlanDTO [planId=" + planId + ", planName=" + planName + ", nationalRate=" + nationalRate
+				+ ", localRate=" + localRate + "]";
+	}
+
+
 }
