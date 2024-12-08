@@ -1,11 +1,15 @@
 package com.application.customer.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Setter
+@Getter
 @Entity
 public class Customer {
 
@@ -22,31 +26,9 @@ public class Customer {
 	String password;
 	@Column(nullable = false, length = 1)
 	char gender;
-	
-	@OneToOne(cascade=CascadeType.REFRESH)
-	@JoinColumn(name="plan_id")
-	Plan plan;
+	@Column(name="plan_id",nullable = false)
+	Integer planId;
 
-	@OneToMany(cascade=CascadeType.MERGE)
-	@JoinColumn(name="phone_no")
-	List<FriendFamily> friends=new ArrayList<>();
-	
-	
-	public Plan getPlan() {
-		return plan;
-	}
-
-	public void setPlan(Plan plan) {
-		this.plan = plan;
-	}
-
-	public List<FriendFamily> getFriends() {
-		return friends;
-	}
-
-	public void setFriends(List<FriendFamily> friends) {
-		this.friends = friends;
-	}
 
 	public char getGender() {
 		return gender;
@@ -78,6 +60,13 @@ public class Customer {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+	public Integer getPlanId() {
+		return planId;
+	}
+
+	public void setPlanId(Integer planId) {
+		this.planId = planId;
 	}
 
 	public String getAddress() {
