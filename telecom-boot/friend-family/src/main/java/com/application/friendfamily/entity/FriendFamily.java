@@ -1,4 +1,4 @@
-package com.application.customer.entity;
+package com.application.friendfamily.entity;
 
 
 import jakarta.persistence.*;
