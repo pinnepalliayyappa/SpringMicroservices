@@ -1,9 +1,9 @@
 server:
-  port: 9100
+  port: 9102
 
 spring:
   application:
-    name: CallDetailsMS
+    name: FriendFamilyMS
   cloud:
     consul:
       host: localhost
@@ -15,13 +15,6 @@ spring:
         profileSeparator: '::'
         format: YAML
         prefixes: config/config
-
-
-
-
-
-
-
 
 
 
