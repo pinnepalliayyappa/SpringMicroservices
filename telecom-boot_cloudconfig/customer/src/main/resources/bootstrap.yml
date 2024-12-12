@@ -1,9 +1,9 @@
 server:
-  port: 9100
+  port: 9104
 
 spring:
   application:
-    name: CallDetailsMS
+    name: CustomerMS
   cloud:
     consul:
       host: localhost
@@ -15,12 +15,6 @@ spring:
         profileSeparator: '::'
         format: YAML
         prefixes: config/config
-
-
-
-
-
-
 
 
 
