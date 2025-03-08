@@ -1,0 +1,24 @@
+server:
+  port: 9102
+
+spring:
+  application:
+    name: FriendFamilyMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        fail-fast: false
+        enabled: true
+        data-key: data
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML
+        prefixes: config/config
+
+
+
+
+
