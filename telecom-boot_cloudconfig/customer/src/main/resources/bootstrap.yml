@@ -1,0 +1,23 @@
+server:
+  port: 9104
+
+spring:
+  application:
+    name: CustomerMS
+  cloud:
+    consul:
+      host: localhost
+      config:
+        fail-fast: false
+        enabled: true
+        data-key: data
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML
+        prefixes: config/config
+
+
+
+
+
+

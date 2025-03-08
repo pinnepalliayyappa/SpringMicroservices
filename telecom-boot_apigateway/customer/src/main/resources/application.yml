@@ -1,0 +1,8 @@
+resilience4j.circuitbreaker:
+  instances:
+    customerService:
+      failureRateThreshold: 50
+      sliding-window-size: 5
+      permitted-number-of-calls-in-half-open-state: 3
+      waitDurationInOpenState: 30s
+      automaticTransitionFromOpenToHalfOpenEnabled: true

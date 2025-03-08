@@ -1,0 +1,25 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: PlanMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        fail-fast: false
+        enabled: true
+        data-key: data
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML
+        prefixes: config/config
+
+
+
+
+
+
